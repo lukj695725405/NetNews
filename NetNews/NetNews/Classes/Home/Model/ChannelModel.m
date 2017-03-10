@@ -23,6 +23,14 @@
     //使用YYModel完成字典转模型操作
     NSArray *modelArray = [NSArray yy_modelArrayWithClass:[ChannelModel class] json:channelDicArray];
 
+//    根据模型中的tid进行从小到大排序
+    modelArray = [modelArray sortedArrayUsingComparator:^NSComparisonResult(ChannelModel *obj1, ChannelModel *obj2) {
+        
+        //  默认使用升序,如果想要降序,那么需要把参数掉转就可以了,比如:[obj2.tid compare:obj1.tid];
+        return [obj1.tid compare:obj2.tid];
+        
+    }];
+    
     return modelArray;
     
 }
