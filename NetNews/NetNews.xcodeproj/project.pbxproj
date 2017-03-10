@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		25C225DA1E72C3180044F917 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 25C225D91E72C3180044F917 /* topic_news.json */; };
 		25C225DD1E72C5540044F917 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225DC1E72C5540044F917 /* HomeViewController.m */; };
+		25C225E01E72C9040044F917 /* ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225DF1E72C9040044F917 /* ChannelModel.m */; };
 		25C772661E72BD48000386E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C772651E72BD48000386E5 /* main.m */; };
 		25C772691E72BD48000386E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C772681E72BD48000386E5 /* AppDelegate.m */; };
 		25C7726F1E72BD48000386E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C7726D1E72BD48000386E5 /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 		25C225D91E72C3180044F917 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
 		25C225DB1E72C5540044F917 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		25C225DC1E72C5540044F917 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		25C225DE1E72C9040044F917 /* ChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelModel.h; sourceTree = "<group>"; };
+		25C225DF1E72C9040044F917 /* ChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelModel.m; sourceTree = "<group>"; };
 		25C772611E72BD48000386E5 /* NetNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C772651E72BD48000386E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		25C772671E72BD48000386E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 		25C225D61E72C2300044F917 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				25C225DE1E72C9040044F917 /* ChannelModel.h */,
+				25C225DF1E72C9040044F917 /* ChannelModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				25C772691E72BD48000386E5 /* AppDelegate.m in Sources */,
 				25C772661E72BD48000386E5 /* main.m in Sources */,
 				25C225DD1E72C5540044F917 /* HomeViewController.m in Sources */,
+				25C225E01E72C9040044F917 /* ChannelModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,8 @@
 //
 
 #import "HomeViewController.h"
-
+#import <YYModel.h>
+#import "ChannelModel.h"
 @interface HomeViewController ()
 
 //频道视图
@@ -24,21 +25,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self requestChannelData];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//请求频道数据
+- (void)requestChannelData{
+    
+    NSArray *modelArray = [ChannelModel getChannelModelArray];
+    for (ChannelModel *m in modelArray) {
+        NSLog(@"%@",m);
+    }
+    
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
