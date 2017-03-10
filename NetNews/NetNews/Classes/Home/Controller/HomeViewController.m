@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "ChannelLabel.h"
 #import "ChannelModel.h"
+#import "NewsCollectionViewCell.h"
 @interface HomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 //频道视图
@@ -85,6 +86,9 @@
     //取消弹簧效果
     self.newsCollectionView.bounces = NO;
     
+    //  ios 10 提供了一个预加载, 预加载提供collectionview的性能,提起给会把下一个显示的cell给你准备好.
+//        self.newsCollectionView.prefetchingEnabled = YES;
+    
 }
 
 
@@ -98,9 +102,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newsCell" forIndexPath:indexPath];
+    NewsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newsCell" forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
+//    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
 
     
     return cell;
