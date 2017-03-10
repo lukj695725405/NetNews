@@ -36,31 +36,19 @@
     if (requestType == GET) {
         
         [self GET:urlStr parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            
-            NSLog(@"%@",responseObject);
             successBlock(responseObject);
-            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
-            NSLog(@"error:%@",error);
             failureBlock(error);
-            
         }];
         
     }else{
         
         [self POST:urlStr parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            
-            NSLog(@"%@",responseObject);
             successBlock(responseObject);
-            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            
             NSLog(@"error:%@",error);
             failureBlock(error);
-            
         }];
-
     }
     
     

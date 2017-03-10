@@ -23,6 +23,6 @@
 /// 大图标记
 @property (nonatomic, assign) BOOL imgType;
 
-
++ (void)requestNewsModelArrayWithUrlStr:(NSString *)urlStr andCompletionBlock:(void(^)(NSArray *modelArray))completionBlock;
 
 @end
