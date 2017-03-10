@@ -13,6 +13,8 @@
 		25C225E31E72CC310044F917 /* ChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225E21E72CC310044F917 /* ChannelLabel.m */; };
 		25C225E61E72D6F60044F917 /* NewsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225E51E72D6F60044F917 /* NewsCollectionViewCell.m */; };
 		25C225E91E72D7250044F917 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225E81E72D7250044F917 /* NewsTableViewController.m */; };
+		25C225EC1E72E1340044F917 /* NetworkTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225EB1E72E1340044F917 /* NetworkTools.m */; };
+		25C225EF1E72E85C0044F917 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225EE1E72E85C0044F917 /* NewsModel.m */; };
 		25C772661E72BD48000386E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C772651E72BD48000386E5 /* main.m */; };
 		25C772691E72BD48000386E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C772681E72BD48000386E5 /* AppDelegate.m */; };
 		25C7726F1E72BD48000386E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25C7726D1E72BD48000386E5 /* Main.storyboard */; };
@@ -52,6 +54,10 @@
 		25C225E51E72D6F60044F917 /* NewsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCollectionViewCell.m; sourceTree = "<group>"; };
 		25C225E71E72D7250044F917 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
 		25C225E81E72D7250044F917 /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		25C225EA1E72E1340044F917 /* NetworkTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkTools.h; sourceTree = "<group>"; };
+		25C225EB1E72E1340044F917 /* NetworkTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkTools.m; sourceTree = "<group>"; };
+		25C225ED1E72E85C0044F917 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
+		25C225EE1E72E85C0044F917 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		25C772611E72BD48000386E5 /* NetNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25C772651E72BD48000386E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		25C772671E72BD48000386E5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 			children = (
 				25C225DE1E72C9040044F917 /* ChannelModel.h */,
 				25C225DF1E72C9040044F917 /* ChannelModel.m */,
+				25C225ED1E72E85C0044F917 /* NewsModel.h */,
+				25C225EE1E72E85C0044F917 /* NewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +167,8 @@
 		25C225D81E72C2300044F917 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				25C225EA1E72E1340044F917 /* NetworkTools.h */,
+				25C225EB1E72E1340044F917 /* NetworkTools.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -424,6 +434,8 @@
 				25C772661E72BD48000386E5 /* main.m in Sources */,
 				25C225E91E72D7250044F917 /* NewsTableViewController.m in Sources */,
 				25C225DD1E72C5540044F917 /* HomeViewController.m in Sources */,
+				25C225EF1E72E85C0044F917 /* NewsModel.m in Sources */,
+				25C225EC1E72E1340044F917 /* NetworkTools.m in Sources */,
 				25C225E61E72D6F60044F917 /* NewsCollectionViewCell.m in Sources */,
 				25C225E01E72C9040044F917 /* ChannelModel.m in Sources */,
 				25C225E31E72CC310044F917 /* ChannelLabel.m in Sources */,

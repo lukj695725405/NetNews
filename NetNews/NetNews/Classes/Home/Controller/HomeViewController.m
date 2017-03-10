@@ -104,9 +104,10 @@
     
     NewsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"newsCell" forIndexPath:indexPath];
     
-//    cell.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
-
+    ChannelModel *model = self.channelModelArray[indexPath.item];
     
+    cell.urlStr = [NSString stringWithFormat:@"%@/0-20.html",model.tid];
+
     return cell;
     
 }
