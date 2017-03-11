@@ -18,8 +18,10 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *newsCollectionView;
 //布局对象
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
-
+//标签的数据源
 @property (nonatomic, strong) NSArray *channelModelArray;
+//存储频道标签
+@property (nonatomic, strong) NSMutableArray *channelLabelArray;
 
 @end
 
@@ -39,7 +41,8 @@
 - (void)requestChannelData{
     //获取频道的数据源
     self.channelModelArray = [ChannelModel getChannelModelArray];
-  
+    //初始化频道数组
+    self.channelLabelArray = [NSMutableArray array];
     //设置频道lable大小
     CGFloat labelH = 44;
     CGFloat labelW = 80;
@@ -55,15 +58,17 @@
         channelLabel.textAlignment = NSTextAlignmentCenter;
         //添加
         [self.channelScrollView addSubview:channelLabel];
-        
+        //设置channelLabel的tag作为标记
         channelLabel.tag = i;
-        
         //开启channelLabel用户交互
         channelLabel.userInteractionEnabled = YES;
         //添加label点击手势
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
         //手势添加到channelLabel上
         [channelLabel addGestureRecognizer:tapGesture];
+        //将channelLabel添加到频道数组中
+        [self.channelLabelArray addObject:channelLabel];
+        
         
     }
     //设置scrollView内容的大小
@@ -81,7 +86,15 @@
     NSIndexPath *index = [NSIndexPath indexPathForItem:channelLabel.tag inSection:0];
     //通过索引下标滚动cell
     [self.newsCollectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    //调用频道偏移的封装
+    [self contentOffXWithChannelLabel:channelLabel];
+   
     
+    
+}
+
+//频道偏移的封装
+- (void)contentOffXWithChannelLabel:(ChannelLabel *)channelLabel{
     
     //计算标签的偏移量
     CGFloat contentOffX = channelLabel.center.x - self.view.frame.size.width * .5;
@@ -100,10 +113,19 @@
     //偏移
     [self.channelScrollView setContentOffset:CGPointMake(contentOffX, 0) animated:YES];
     
+}
+#pragma mark - UICollectionViewDelegate
+//collection 移动停止调用
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    //通过scrollView的偏移 / 屏幕的宽 获得索引下标
+    int index = scrollView.contentOffset.x / scrollView.frame.size.width;
+    //根据下标 获取频道数组中的标签
+    ChannelLabel *channelLabel = self.channelLabelArray[index];
+    //调用频道偏移的封装
+    [self contentOffXWithChannelLabel:channelLabel];
     
 }
-
-
 
 //设置新闻视图
 - (void)setupNewsCollectionView{
@@ -153,5 +175,6 @@
     return cell;
     
 }
+
 
 @end
