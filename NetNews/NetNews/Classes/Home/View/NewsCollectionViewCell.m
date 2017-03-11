@@ -21,7 +21,7 @@
     //设置tableView的大小
     _newsTableVC.tableView.frame = self.contentView.bounds;
     //设置tableView的随机颜色
-    _newsTableVC.tableView.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
+//    _newsTableVC.tableView.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
 
     [self.contentView addSubview:_newsTableVC.tableView];
 }

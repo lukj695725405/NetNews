@@ -53,8 +53,18 @@
         //设置文字大小和居中
         channelLabel.font = [UIFont systemFontOfSize:15];
         channelLabel.textAlignment = NSTextAlignmentCenter;
-        
+        //添加
         [self.channelScrollView addSubview:channelLabel];
+        
+        channelLabel.tag = i;
+        
+        //开启channelLabel用户交互
+        channelLabel.userInteractionEnabled = YES;
+        //添加label点击手势
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
+        //手势添加到channelLabel上
+        [channelLabel addGestureRecognizer:tapGesture];
+        
     }
     //设置scrollView内容的大小
     self.channelScrollView.contentSize = CGSizeMake(labelW * self.channelModelArray.count, 0);
@@ -63,7 +73,39 @@
     self.channelScrollView.showsHorizontalScrollIndicator = NO;
 }
 
+#pragma mark - 点击channelLabel标签
+- (void)tapGesture:(UIGestureRecognizer *)tapGesture{
+    //获得 channelLabel tapGesture就是channelLabel
+    ChannelLabel *channelLabel = (ChannelLabel *)tapGesture.view;
+    //通过tag 创建NSIndexPath获取索引下标
+    NSIndexPath *index = [NSIndexPath indexPathForItem:channelLabel.tag inSection:0];
+    //通过索引下标滚动cell
+    [self.newsCollectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+    
+    
+    //计算标签的偏移量
+    CGFloat contentOffX = channelLabel.center.x - self.view.frame.size.width * .5;
+    //最小偏移量
+    CGFloat contentOffMinX = 0;
+    //最大偏移量
+    CGFloat contentOffMaxX = self.channelScrollView.contentSize.width - self.view.frame.size.width;
+    
+    if (contentOffX < contentOffMinX) {
+        contentOffX = contentOffMinX;
+    }
+    if (contentOffX > contentOffMaxX) {
+        contentOffX = contentOffMaxX;
+    }
+    
+    //偏移
+    [self.channelScrollView setContentOffset:CGPointMake(contentOffX, 0) animated:YES];
+    
+    
+}
 
+
+
+//设置新闻视图
 - (void)setupNewsCollectionView{
     
     //设置数据源代理
