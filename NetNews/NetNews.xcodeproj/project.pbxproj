@@ -10,6 +10,8 @@
 		253B8FC31E750AE300DFEF98 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 253B8FC21E750AE300DFEF98 /* NewsTableViewCell.m */; };
 		253B8FC51E750B0300DFEF98 /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253B8FC41E750B0300DFEF98 /* BaseCell.xib */; };
 		253B8FC71E7553F000DFEF98 /* BigCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253B8FC61E7553F000DFEF98 /* BigCell.xib */; };
+		253B8FC91E75572E00DFEF98 /* ImagesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253B8FC81E75572E00DFEF98 /* ImagesCell.xib */; };
+		253B8FCC1E755B7E00DFEF98 /* PictureInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 253B8FCB1E755B7E00DFEF98 /* PictureInfo.m */; };
 		25C225DA1E72C3180044F917 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 25C225D91E72C3180044F917 /* topic_news.json */; };
 		25C225DD1E72C5540044F917 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225DC1E72C5540044F917 /* HomeViewController.m */; };
 		25C225E01E72C9040044F917 /* ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225DF1E72C9040044F917 /* ChannelModel.m */; };
@@ -50,6 +52,9 @@
 		253B8FC21E750AE300DFEF98 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		253B8FC41E750B0300DFEF98 /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
 		253B8FC61E7553F000DFEF98 /* BigCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigCell.xib; sourceTree = "<group>"; };
+		253B8FC81E75572E00DFEF98 /* ImagesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagesCell.xib; sourceTree = "<group>"; };
+		253B8FCA1E755B7E00DFEF98 /* PictureInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureInfo.h; sourceTree = "<group>"; };
+		253B8FCB1E755B7E00DFEF98 /* PictureInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureInfo.m; sourceTree = "<group>"; };
 		25C225D91E72C3180044F917 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
 		25C225DB1E72C5540044F917 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		25C225DC1E72C5540044F917 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -156,6 +161,8 @@
 				25C225DF1E72C9040044F917 /* ChannelModel.m */,
 				25C225ED1E72E85C0044F917 /* NewsModel.h */,
 				25C225EE1E72E85C0044F917 /* NewsModel.m */,
+				253B8FCA1E755B7E00DFEF98 /* PictureInfo.h */,
+				253B8FCB1E755B7E00DFEF98 /* PictureInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +178,7 @@
 				253B8FC21E750AE300DFEF98 /* NewsTableViewCell.m */,
 				253B8FC41E750B0300DFEF98 /* BaseCell.xib */,
 				253B8FC61E7553F000DFEF98 /* BigCell.xib */,
+				253B8FC81E75572E00DFEF98 /* ImagesCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				253B8FC91E75572E00DFEF98 /* ImagesCell.xib in Resources */,
 				253B8FC71E7553F000DFEF98 /* BigCell.xib in Resources */,
 				25C772741E72BD48000386E5 /* LaunchScreen.storyboard in Resources */,
 				25C772711E72BD48000386E5 /* Assets.xcassets in Resources */,
@@ -443,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				253B8FCC1E755B7E00DFEF98 /* PictureInfo.m in Sources */,
 				25C772691E72BD48000386E5 /* AppDelegate.m in Sources */,
 				25C772661E72BD48000386E5 /* main.m in Sources */,
 				25C225E91E72D7250044F917 /* NewsTableViewController.m in Sources */,

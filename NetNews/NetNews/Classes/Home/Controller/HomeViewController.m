@@ -145,10 +145,10 @@
     ChannelLabel *leftChannelLabel = self.channelLabelArray[leftLabel];
     leftChannelLabel.scale = leftPersents;
     
-//    if (rightLabel < self.channelLabelArray.count) {
+    if (rightLabel < self.channelLabelArray.count) {
         ChannelLabel *rightChannelLabel = self.channelLabelArray[rightLabel];
         rightChannelLabel.scale = rightPersents;
-//    }
+    }
 
     
 }

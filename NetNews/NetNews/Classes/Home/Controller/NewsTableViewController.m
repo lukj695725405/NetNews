@@ -30,6 +30,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:@"baseCell"];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"BigCell" bundle:nil] forCellReuseIdentifier:@"bigCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"ImagesCell" bundle:nil] forCellReuseIdentifier:@"imagesCell"];
 }
 
 - (void)setUrlStr:(NSString *)urlStr{
@@ -79,6 +81,10 @@
     if (model.imgType) {
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"bigCell" forIndexPath:indexPath];
+        
+    }else if(model.imgextra.count == 2){
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"imagesCell" forIndexPath:indexPath];
     }else{
         
         cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell" forIndexPath:indexPath];
@@ -92,8 +98,8 @@
     NewsModel *model = self.newsModelArray[indexPath.row];
     if (model.imgType) {
         return 130;
-//    } else if (model.imgextra.count == 2) {
-//        return 180;
+    } else if (model.imgextra.count == 2) {
+        return 180;
     } else {
         return 80;
     }

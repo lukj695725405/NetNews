@@ -8,6 +8,7 @@
 
 #import "NewsTableViewCell.h"
 #import <UIImageView+WebCache.h>
+#import "PictureInfo.h"
 @interface NewsTableViewCell ()
 
 //图片
@@ -18,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *sourceLabel;
 //回复数
 @property (weak, nonatomic) IBOutlet UILabel *replyCountLabel;
+
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *iconImagesView;
+
 
 @end
 
@@ -35,6 +39,21 @@
     self.sourceLabel.text = newsModel.source;
     
     self.replyCountLabel.text = @(newsModel.replyCount).description;
+    
+    
+    //  遍历图片集合
+    for (int i = 0; i < self.iconImagesView.count; i++) {
+        //  获取对应的图片字典
+        NSDictionary *imageDic = newsModel.imgextra[i];
+        //  通过key获取图片的地址
+        NSString *imagePath = [imageDic objectForKey:@"imgsrc"];
+        //  获取对应的imageView
+        UIImageView *imageView = self.iconImagesView[i];
+        //  给imageView设置网络图片
+        [imageView sd_setImageWithURL:[NSURL URLWithString:imagePath] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
+    }
+
+    
     
 }
 
