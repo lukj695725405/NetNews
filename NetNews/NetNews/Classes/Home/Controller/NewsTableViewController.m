@@ -28,6 +28,8 @@
 - (void)setupTableView{
     
     [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:@"baseCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"BigCell" bundle:nil] forCellReuseIdentifier:@"bigCell"];
 }
 
 - (void)setUrlStr:(NSString *)urlStr{
@@ -72,24 +74,30 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell" forIndexPath:indexPath];
-    
     NewsModel *model = self.newsModelArray[indexPath.row];
-    //显示新闻的标题
+    NewsTableViewCell *cell;
+    if (model.imgType) {
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"bigCell" forIndexPath:indexPath];
+    }else{
+        
+        cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell" forIndexPath:indexPath];
+    }
+    
     cell.newsModel = model;
     
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NewsModel *model = self.newsModelArray[indexPath.row];
-//    if (model.imgType) {
-//        return 130;
+    NewsModel *model = self.newsModelArray[indexPath.row];
+    if (model.imgType) {
+        return 130;
 //    } else if (model.imgextra.count == 2) {
 //        return 180;
-//    } else {
-//        return 80;
-//    }
-    return 80;
+    } else {
+        return 80;
+    }
+    
     
 }
 
