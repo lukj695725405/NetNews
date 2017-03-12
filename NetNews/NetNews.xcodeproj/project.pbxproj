@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		253B8FC31E750AE300DFEF98 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 253B8FC21E750AE300DFEF98 /* NewsTableViewCell.m */; };
+		253B8FC51E750B0300DFEF98 /* BaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 253B8FC41E750B0300DFEF98 /* BaseCell.xib */; };
 		25C225DA1E72C3180044F917 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = 25C225D91E72C3180044F917 /* topic_news.json */; };
 		25C225DD1E72C5540044F917 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225DC1E72C5540044F917 /* HomeViewController.m */; };
 		25C225E01E72C9040044F917 /* ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 25C225DF1E72C9040044F917 /* ChannelModel.m */; };
@@ -43,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		253B8FC11E750AE300DFEF98 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		253B8FC21E750AE300DFEF98 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		253B8FC41E750B0300DFEF98 /* BaseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseCell.xib; sourceTree = "<group>"; };
 		25C225D91E72C3180044F917 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
 		25C225DB1E72C5540044F917 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		25C225DC1E72C5540044F917 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -160,6 +165,9 @@
 				25C225E21E72CC310044F917 /* ChannelLabel.m */,
 				25C225E41E72D6F60044F917 /* NewsCollectionViewCell.h */,
 				25C225E51E72D6F60044F917 /* NewsCollectionViewCell.m */,
+				253B8FC11E750AE300DFEF98 /* NewsTableViewCell.h */,
+				253B8FC21E750AE300DFEF98 /* NewsTableViewCell.m */,
+				253B8FC41E750B0300DFEF98 /* BaseCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,6 +364,7 @@
 			files = (
 				25C772741E72BD48000386E5 /* LaunchScreen.storyboard in Resources */,
 				25C772711E72BD48000386E5 /* Assets.xcassets in Resources */,
+				253B8FC51E750B0300DFEF98 /* BaseCell.xib in Resources */,
 				25C225DA1E72C3180044F917 /* topic_news.json in Resources */,
 				25C7726F1E72BD48000386E5 /* Main.storyboard in Resources */,
 			);
@@ -436,6 +445,7 @@
 				25C225DD1E72C5540044F917 /* HomeViewController.m in Sources */,
 				25C225EF1E72E85C0044F917 /* NewsModel.m in Sources */,
 				25C225EC1E72E1340044F917 /* NetworkTools.m in Sources */,
+				253B8FC31E750AE300DFEF98 /* NewsTableViewCell.m in Sources */,
 				25C225E61E72D6F60044F917 /* NewsCollectionViewCell.m in Sources */,
 				25C225E01E72C9040044F917 /* ChannelModel.m in Sources */,
 				25C225E31E72CC310044F917 /* ChannelLabel.m in Sources */,

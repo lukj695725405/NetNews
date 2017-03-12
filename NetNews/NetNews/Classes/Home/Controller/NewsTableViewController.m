@@ -8,7 +8,7 @@
 
 #import "NewsTableViewController.h"
 #import "NewsModel.h"
-
+#import "NewsTableViewCell.h"
 //新闻列表tableView
 @interface NewsTableViewController ()
 //新闻列表数据源
@@ -27,8 +27,7 @@
 
 - (void)setupTableView{
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"newsCell"];
-    
+    [self.tableView registerNib:[UINib nibWithNibName:@"BaseCell" bundle:nil] forCellReuseIdentifier:@"baseCell"];
 }
 
 - (void)setUrlStr:(NSString *)urlStr{
@@ -73,13 +72,25 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"newsCell" forIndexPath:indexPath];
+    NewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"baseCell" forIndexPath:indexPath];
     
     NewsModel *model = self.newsModelArray[indexPath.row];
     //显示新闻的标题
-    cell.textLabel.text = model.title;
+    cell.newsModel = model;
     
     return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NewsModel *model = self.newsModelArray[indexPath.row];
+//    if (model.imgType) {
+//        return 130;
+//    } else if (model.imgextra.count == 2) {
+//        return 180;
+//    } else {
+//        return 80;
+//    }
+    return 80;
+    
 }
 
 @end
