@@ -46,7 +46,7 @@
     //设置频道lable大小
     CGFloat labelH = 44;
     CGFloat labelW = 80;
-    
+    NSLog(@"%zd",self.channelModelArray.count);
     for (int i = 0; i < self.channelModelArray.count; i++) {
         //获取对应的模型数据
         ChannelModel *model = self.channelModelArray[i];
@@ -88,9 +88,7 @@
     [self.newsCollectionView scrollToItemAtIndexPath:index atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     //调用频道偏移的封装
     [self contentOffXWithChannelLabel:channelLabel];
-   
-    
-    
+
 }
 
 //频道偏移的封装
@@ -124,6 +122,34 @@
     ChannelLabel *channelLabel = self.channelLabelArray[index];
     //调用频道偏移的封装
     [self contentOffXWithChannelLabel:channelLabel];
+    
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    int index = scrollView.contentOffset.x / scrollView.frame.size.width;
+    CGFloat floatIndex = scrollView.contentOffset.x / scrollView.frame.size.width;
+    CGFloat persents = floatIndex - index;
+//    NSLog(@"%f",persents);
+    
+//    //左边的label百分比
+    CGFloat leftPersents = 1 - persents;
+//    //右边lable的百分比
+    CGFloat rightPersents = persents;
+    NSLog(@"左:%f,右:%f",leftPersents,rightPersents);
+    //左边标签索引
+    int leftLabel = index;
+    //右边标签索引
+    int rightLabel = 1 + index;
+    
+    ChannelLabel *leftChannelLabel = self.channelLabelArray[leftLabel];
+    leftChannelLabel.scale = leftPersents;
+    
+//    if (rightLabel < self.channelLabelArray.count) {
+        ChannelLabel *rightChannelLabel = self.channelLabelArray[rightLabel];
+        rightChannelLabel.scale = rightPersents;
+//    }
+
     
 }
 

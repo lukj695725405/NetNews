@@ -57,9 +57,9 @@
     
     [NewsModel requestNewsModelArrayWithUrlStr:urlStr andCompletionBlock:^(NSArray *modelArray) {
         
-        NSLog(@"%@",modelArray);
+//        NSLog(@"%@",modelArray);
         self.newsModelArray = modelArray;
-        
+
         [self.tableView reloadData];
         
     }];

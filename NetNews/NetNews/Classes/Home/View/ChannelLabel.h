@@ -10,4 +10,6 @@
 //自定义频道Label
 @interface ChannelLabel : UILabel
 
+@property (nonatomic, assign) CGFloat scale;
+
 @end
