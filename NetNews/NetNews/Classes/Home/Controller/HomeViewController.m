@@ -89,6 +89,17 @@
     //调用频道偏移的封装
     [self contentOffXWithChannelLabel:channelLabel];
 
+    //  遍历频道数组,判断点击的频道和数组里面的频道进行查找,如果找到了,那么放大,否则显示默认状态
+    for (ChannelLabel *label in self.channelLabelArray) {
+        if (channelLabel == label) {
+            //  设置变大变红
+            label.scale = 1;
+        } else {
+            //  其它频道标签设置成默认状态就可以了
+            label.scale = 0;
+        }
+    }
+    
 }
 
 //频道偏移的封装
